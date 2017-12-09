@@ -34,7 +34,31 @@ require_once ('simpleSQL.php');
 ```   
 
 
+
+
+
+
 # Initialization 
+To initialize a simpleSQL object
+``` 
+$db = new simpleSQL("host","username","password","database_name");
+```
+Previously created mysqli connections can also be used to initialize this object
+```
+$sqli = new mysqli("host","username","password","database_name");  
+$db = new simpleSQL($sqli);
+```
+To automatically connect your simpleSQL object upon initialization an extra parameter is required
+```
+$db = new simpleSQL("host","username","password","database_name",true);
+
+```
+Port and charset settings can be set by adding 2 parameters to the end of your object initialization
+```
+$db = new simpleSQL("host","username","password","database_name",true,3306,'utf8');
+```
+
+
 
 
 # Connecting  
